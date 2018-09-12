@@ -7,11 +7,11 @@
 
 import UIKit
 
-class postsTableViewCell: UITableViewCell {
+class PostCell: UITableViewCell {
     
     
-    class 
-
+    @IBOutlet weak var photoImageView: UIImageView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -27,12 +27,5 @@ class postsTableViewCell: UITableViewCell {
         
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "postCell") as! postCell
-        
-        // Configure YourCustomCell using the outlets that you've defined.
-        
-        return cell
-    }
 
 }

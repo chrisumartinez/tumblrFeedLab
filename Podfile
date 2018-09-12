@@ -6,6 +6,8 @@ target 'Tumblr Feed' do
   use_frameworks!
 
 	pod 'Alamofire', '~> 4.4'
+	pod 'AlamofireImage', '~> 3.3'
+	
   # Pods for Tumblr Feed
 
   target 'Tumblr FeedTests' do

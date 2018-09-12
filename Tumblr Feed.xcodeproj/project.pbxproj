@@ -14,7 +14,7 @@
 		A6383DA92142D00D00E054C8 /* Tumblr_FeedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6383DA82142D00D00E054C8 /* Tumblr_FeedTests.swift */; };
 		A6383DB42142D00D00E054C8 /* Tumblr_FeedUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6383DB32142D00D00E054C8 /* Tumblr_FeedUITests.swift */; };
 		A6383DC22142D23B00E054C8 /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6383DC12142D23B00E054C8 /* PhotoViewController.swift */; };
-		A6383DC42142D77A00E054C8 /* postsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6383DC32142D77A00E054C8 /* postsTableViewCell.swift */; };
+		A6383DC42142D77A00E054C8 /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6383DC32142D77A00E054C8 /* PostCell.swift */; };
 		C2FFAC44A8E32CB16C88A76B /* Pods_Tumblr_FeedUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9C86EB442FD42FA2954F9CF /* Pods_Tumblr_FeedUITests.framework */; };
 		D5C1F208B80E2C1F0E3C35C8 /* Pods_Tumblr_FeedTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C457AE03631268AA10F694E /* Pods_Tumblr_FeedTests.framework */; };
 		DBED88439CEF66E669276CD0 /* Pods_Tumblr_Feed.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17E080D31C5C29D41FB1A47A /* Pods_Tumblr_Feed.framework */; };
@@ -57,7 +57,7 @@
 		A6383DB32142D00D00E054C8 /* Tumblr_FeedUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tumblr_FeedUITests.swift; sourceTree = "<group>"; };
 		A6383DB52142D00D00E054C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A6383DC12142D23B00E054C8 /* PhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
-		A6383DC32142D77A00E054C8 /* postsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = postsTableViewCell.swift; sourceTree = "<group>"; };
+		A6383DC32142D77A00E054C8 /* PostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
 		A9C86EB442FD42FA2954F9CF /* Pods_Tumblr_FeedUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tumblr_FeedUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3F01260CFFD49B0C6AE8041 /* Pods-Tumblr Feed.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tumblr Feed.release.xcconfig"; path = "Pods/Target Support Files/Pods-Tumblr Feed/Pods-Tumblr Feed.release.xcconfig"; sourceTree = "<group>"; };
 		C6A0307D756C2BDDEC426E37 /* Pods-Tumblr FeedUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tumblr FeedUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Tumblr FeedUITests/Pods-Tumblr FeedUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -140,7 +140,7 @@
 			isa = PBXGroup;
 			children = (
 				A6383DC12142D23B00E054C8 /* PhotoViewController.swift */,
-				A6383DC32142D77A00E054C8 /* postsTableViewCell.swift */,
+				A6383DC32142D77A00E054C8 /* PostCell.swift */,
 				A6383D932142D00500E054C8 /* AppDelegate.swift */,
 				A6383D972142D00500E054C8 /* Main.storyboard */,
 				A6383D9A2142D00C00E054C8 /* Assets.xcassets */,
@@ -306,10 +306,12 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Tumblr Feed/Pods-Tumblr Feed-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -379,7 +381,7 @@
 			files = (
 				A6383D942142D00500E054C8 /* AppDelegate.swift in Sources */,
 				A6383DC22142D23B00E054C8 /* PhotoViewController.swift in Sources */,
-				A6383DC42142D77A00E054C8 /* postsTableViewCell.swift in Sources */,
+				A6383DC42142D77A00E054C8 /* PostCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
