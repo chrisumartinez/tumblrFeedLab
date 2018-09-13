@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -33,11 +34,16 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="233.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="a1b-PY-igS">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="a1b-PY-igS">
                                                     <rect key="frame" x="0.0" y="0.0" width="370" height="234"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="a1b-PY-igS" firstAttribute="top" secondItem="cRw-zE-slE" secondAttribute="top" id="jBK-Ku-yW7"/>
+                                                <constraint firstItem="a1b-PY-igS" firstAttribute="leading" secondItem="cRw-zE-slE" secondAttribute="leading" id="rI9-zO-FjK"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="a1b-PY-igS" secondAttribute="trailing" constant="-11" id="yFm-79-yBs"/>
+                                                <constraint firstItem="a1b-PY-igS" firstAttribute="centerY" secondItem="cRw-zE-slE" secondAttribute="centerY" id="zam-2X-pyq"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="photoImageView" destination="a1b-PY-igS" id="bLH-nG-ICe"/>

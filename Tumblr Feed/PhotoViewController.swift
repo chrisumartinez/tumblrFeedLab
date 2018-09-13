@@ -44,8 +44,7 @@ class PhotoViewController: UIViewController, UITableViewDataSource{
                     self.posts = responseDictionary["posts"] as! [[String: Any]]
                     self.tableView.reloadData()
                     self.refreshControl.endRefreshing()
-                    
-                    // TODO: Reload the table view
+                   
                 }
             }
             task.resume()
@@ -61,11 +60,17 @@ class PhotoViewController: UIViewController, UITableViewDataSource{
         
         func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
             let cell = tableView.dequeueReusableCell(withIdentifier: "postCell", for: indexPath) as! PostCell
-            let post = posts[indexPath.row]
-            if post["type"] as! String  == "photo"{
-                let altSize = post["alt_sizes"] as! [String: Any]
-                let url = altSize["url"] as! String
-                let photoURL = URL(string: url)
+            let post = self.posts[indexPath.row]
+            if let photos = post["photos"] as? [[String: Any]] {
+                // 1.
+                let photo = photos[0]
+                // 2.
+                let originalSize = photo["original_size"] as! [String: Any]
+                // 3.
+                let urlString = originalSize["url"] as! String
+                // 4.∫
+                let photoURL = URL(string: urlString)
+                
                 cell.photoImageView.af_setImage(withURL: photoURL!)
             }
             
