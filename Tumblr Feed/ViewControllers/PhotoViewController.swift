@@ -12,6 +12,7 @@ import AlamofireImage
 class PhotoViewController: UIViewController, UITableViewDataSource{
 
     var posts: [[String: Any]] = []
+    
     var refreshControl: UIRefreshControl!
     @IBOutlet weak var tableView: UITableView!
     
@@ -50,6 +51,37 @@ class PhotoViewController: UIViewController, UITableViewDataSource{
             task.resume()
             
         }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let cell = sender as! UITableViewCell
+        if let indexPath = tableView.indexPath(for: cell){
+            let post = posts[indexPath.row]
+            let url : URL
+            
+            if let photos = post["photos"] as? [[String: Any]] {
+                // 1.
+                let photo = photos[0]
+                // 2.
+                let originalSize = photo["original_size"] as! [String: Any]
+                // 3.
+                let urlString = originalSize["url"] as! String
+                // 4.∫
+                let photoURL = URL(string: urlString)
+                
+                url = photoURL!
+                
+                let photoDetailViewController = segue.destination as! PhotoDetailViewController
+                photoDetailViewController.url = url
+                
+                
+    
+            }
+            
+
+        }
+    }
+    
+    
     @objc func didPullToRefresh(_ refreshControl: UIRefreshControl){
         fetchPosts()
     }
